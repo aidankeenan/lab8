@@ -122,7 +122,7 @@ module MakeInterval (Endpoint : ORDERED_TYPE) =
         | Empty, _ -> Empty
         | _, Empty -> Empty
         | Interval (a, b), Interval (c, d) -> let (_, low), (high, _) = 
-                                              ordered a b, ordered c d in
+                                              ordered a c, ordered b d in
                                               create low high
 
     end ;;
@@ -223,7 +223,7 @@ module MakeSafeInterval (Endpoint : ORDERED_TYPE) : INTERVAL =
         | Empty, _ -> Empty
         | _, Empty -> Empty
         | Interval (a, b), Interval (c, d) -> let (_, low), (high, _) = 
-                                              ordered a b, ordered c d in
+                                              ordered a c, ordered b d in
                                               create low high
   end ;;
 
@@ -317,7 +317,7 @@ module MakeBestInterval (Endpoint : ORDERED_TYPE)
         | Empty, _ -> Empty
         | _, Empty -> Empty
         | Interval (a, b), Interval (c, d) -> let (_, low), (high, _) = 
-                                              ordered a b, ordered c d in
+                                              ordered a c, ordered b d in
                                               create low high
   end ;;
 
