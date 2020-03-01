@@ -119,7 +119,7 @@ module MakeInterval (Endpoint : ORDERED_TYPE) =
     let intersect (intvl1 : interval) (intvl2 : interval) : interval =
       let ordered x y = if Endpoint.compare x y <= 0 then x, y else y,x in
         match intvl1, intvl2 with
-        | Empty, _ -> Empty
+        | Empty, _ 
         | _, Empty -> Empty
         | Interval (a, b), Interval (c, d) -> let (_, low), (high, _) = 
                                               ordered a c, ordered b d in
@@ -220,7 +220,7 @@ module MakeSafeInterval (Endpoint : ORDERED_TYPE) : INTERVAL =
     let intersect (intvl1 : interval) (intvl2 : interval) : interval =
       let ordered x y = if Endpoint.compare x y <= 0 then x, y else y,x in
         match intvl1, intvl2 with
-        | Empty, _ -> Empty
+        | Empty, _ 
         | _, Empty -> Empty
         | Interval (a, b), Interval (c, d) -> let (_, low), (high, _) = 
                                               ordered a c, ordered b d in
@@ -314,7 +314,7 @@ module MakeBestInterval (Endpoint : ORDERED_TYPE)
     let intersect (intvl1 : interval) (intvl2 : interval) : interval =
       let ordered x y = if Endpoint.compare x y <= 0 then x, y else y,x in
         match intvl1, intvl2 with
-        | Empty, _ -> Empty
+        | Empty, _ 
         | _, Empty -> Empty
         | Interval (a, b), Interval (c, d) -> let (_, low), (high, _) = 
                                               ordered a c, ordered b d in
