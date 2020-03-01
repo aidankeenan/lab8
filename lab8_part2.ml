@@ -139,7 +139,7 @@ that you just defined to an appropriate module for serializing integers.
 module IntSerialize : (SERIALIZE with type t = int) = 
   struct
     type t = int
-    let serialize = sting_of_int
+    let serialize = string_of_int
   end ;;
 
 module IntStack : (STACK with type element = IntSerialize.t) =
